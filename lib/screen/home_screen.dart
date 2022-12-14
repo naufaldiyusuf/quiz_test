@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../bloc/page/page_bloc.dart';
 
@@ -75,6 +76,23 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.lightBlue
                     ),
                     primary: Colors.white
+                ),
+              ),
+            ),
+            Container(
+              color: Colors.transparent,
+              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.05),
+              child: GestureDetector(
+                onTap: () => Share.share("Check out this flutter quiz app! https://github.com/naufaldiyusuf/quiz_test"),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.share, size: 30,),
+                    Container(
+                      padding: EdgeInsets.only(left: 5),
+                      child: Text("Share", style: TextStyle(fontSize: 15),),
+                    )
+                  ],
                 ),
               ),
             )
